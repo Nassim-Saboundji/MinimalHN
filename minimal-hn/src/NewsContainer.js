@@ -3,8 +3,8 @@ import NewsCard from './NewsCard';
 
 function NewsContainer() {  
   return (
-    <div id="newsContainer">
-      <NewsCard newsId="26367747"/>
+    <div id="newsContainer container">
+      <NewsCard newsId="26368939" key={1}/>
     </div>
   );
 }
