@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import CommentContainer from './CommentContainer';
 
 class NewsCard extends React.Component {
@@ -29,15 +29,20 @@ class NewsCard extends React.Component {
 
     render(){
        return(
-            <Fragment>
-                <h1>{this.state.title}</h1>
-                <a href={this.state.url} target="_blank" rel="noreferrer">Read the story</a>
-                <div>
-                {this.state.comments.map((item, index) => (
-                    <CommentContainer commentId={item} key={index}/>
-                ))}
+            <div className="container">
+                <div className="section">
+                    <h1 className="title">{this.state.title}</h1>
+                    <a className="button is-danger" href={this.state.url} target="_blank" rel="noreferrer">Read the story</a>
+                    <button className="button ml-3">View Some Comments</button>
                 </div>
-            </Fragment>
+                <div className="section">
+                    <div className="">
+                    {this.state.comments.map((item, index) => (
+                        <CommentContainer commentId={item} key={index}/>
+                    ))}
+                    </div>
+                </div>
+            </div>
        ); 
     }
 }

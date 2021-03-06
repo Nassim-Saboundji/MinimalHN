@@ -19,12 +19,12 @@ class CommentContainer extends React.Component {
   componentDidMount(){
     fetch('https://hacker-news.firebaseio.com/v0/item/' + this.state.commentId)
         .then(response => response.json())
-        .then(data => this.setState({ text: data.text + ""}));    
+        .then(data => this.setState({ text: data.text}));    
   }
   
   render(){
       return (
-        <p>{this.state.text}</p>
+        <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
       );
   }
 }
