@@ -1,9 +1,10 @@
 import NewsCard from './NewsCard';
 
-function NewsContainer() {
+
+function NewsContainer() {  
   return (
     <div id="newsContainer">
-      <NewsCard title="Rust is better than C" link="https//google.com" comments={[1,2,3]}/>
+      <NewsCard newsId="26361423"/>
     </div>
   );
 }
