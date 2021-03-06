@@ -11,21 +11,21 @@ class CommentContainer extends React.Component {
 
   static getDerivedStateFromProps(props, state){
       return {
-        commentId: props.commentId + ".json",
+        commentId: props.commentId,
         key: props.key
       }
   }
 
   componentDidMount(){
-    fetch('https://hacker-news.firebaseio.com/v0/item/' + this.state.commentId)
+    fetch('https://hacker-news.firebaseio.com/v0/item/' + this.state.commentId + ".json")
         .then(response => response.json())
         .then(data => this.setState({ text: data.text}));    
   }
   
   render(){
-      return (
-        <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
-      );
+        return (
+          <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
+        );
   }
 }
 
