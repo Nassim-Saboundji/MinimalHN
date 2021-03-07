@@ -14,7 +14,7 @@ This Frontend relies on 3 main components :
 - NewsCard :  Contains all the relevant information for a given story.
 - CommentContainer :  Contains the code to display a comment.
 
-NewsContainre calls NewsCard for each of the top stories.
+NewsContainer calls NewsCard for each of the top stories.
 NewsCard calls CommentContainer for each top level comment of a given story.
 
 ## How To Run
