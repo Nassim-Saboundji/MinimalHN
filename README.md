@@ -9,7 +9,7 @@ wasting too much time there.
 Hosted [here](https://minimalhn.netlify.app/)
 
 ## About The Code
-This Frontend relies on 4 main components :
+This Frontend relies on 3 main components :
 - NewsContainer : Contains all the top stories.
 - NewsCard :  Contains all the relevant information for a given story.
 - CommentContainer :  Contains the code to display a comment.
