@@ -7,6 +7,7 @@ It contains only what is really essential. This means that it will show only the
 wasting too much time there.
 
 Hosted [here](https://minimalhn.netlify.app/)
+
 ![how the demo looks](demo.gif)
 
 ## About The Code
