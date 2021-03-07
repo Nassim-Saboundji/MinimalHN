@@ -26,10 +26,6 @@ class NewsCard extends React.Component {
         };
     }
 
-    areThereKids(kids){
-        console.log("The kids : " + kids);
-        return kids;
-    }
 
     componentDidMount(){
         fetch('https://hacker-news.firebaseio.com/v0/item/' + this.state.newsId + ".json")
@@ -37,26 +33,25 @@ class NewsCard extends React.Component {
             .then(data => this.setState({
                 title: data.title,
                 url: data.url,
-                comments: this.areThereKids(data.kids),
+                comments: data.kids,
         }));
     }
 
 
     render(){
        return(
-            <div className="container mx-3">
-                <div className="section">
-                    <h1 className="title">{this.state.title}</h1>
-                    <div className="columns">
-                        <div className="column is-2">
-                            <a className="button" href={this.state.url} target="_blank" rel="noreferrer">Read The Story</a> 
-                        </div>
-                        <div className="column is-1">
-                            <button className="button" onClick={() => this.makeCommentsVisible()}>{this.state.visibilityBtnTxt}</button> 
-                        </div>
-                    </div>
+            <div className="container">
+
+                <div className="rows is-centered">    
+                <div className="row mt-3 text-is-justified">
+                    <h1 className="title is-5 mx-3">{this.state.title}</h1>
                 </div>
-                <div className= "container mx-5">
+                <div className="row mt-3 text-is-justified">
+                    <button className="button mx-3 text-is-justified is-danger" onClick={() => this.makeCommentsVisible()}>{this.state.visibilityBtnTxt}</button>
+                    <a className="button mx-3 text-is-justified is-link" href={this.state.url} target="_blank" rel="noreferrer">Read Story</a>  
+                </div>
+                </div> 
+                <div className= "container mt-3">
                     <div className={this.state.visbility}>
                         {this.state.comments === undefined ? console.log("empty") : this.state.comments.map((item, index) => (
                             <CommentContainer commentId={item} key={index}/>

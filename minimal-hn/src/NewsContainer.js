@@ -10,16 +10,15 @@ class NewsContainer extends React.Component {
     }
   }
 
-  keepTopTen(news){
-    console.log(news.slice(0,11));
-    return news.slice(0,11);
+  keepTopThirty(news){
+    return news.slice(0,31);
   }
 
   componentDidMount(){
     fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
         .then(response => response.json())
         .then(data => this.setState({
-            news: this.keepTopTen(data)
+            news: this.keepTopThirty(data)
     }));
   }
 

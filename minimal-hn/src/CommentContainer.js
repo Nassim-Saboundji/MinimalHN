@@ -24,7 +24,8 @@ class CommentContainer extends React.Component {
   
   render(){
         return (
-          <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
+          <div className="content card p-3 has-text-justified" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
+          
         );
   }
 }
