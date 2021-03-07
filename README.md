@@ -8,3 +8,11 @@ wasting too much time there.
 
 DEMO is available !()[here]
 
+## About The Code
+This Frontend relies on 4 main components :
+- NewsContainer : Contains all the top stories.
+- NewsCard :  Contains all the relevant information for a given story.
+- CommentContainer :  Contains the code to display a comment.
+
+NewsContainre calls NewsCard for each of the top stories.
+NewsCard calls CommentContainer for each top level comment for a story.
